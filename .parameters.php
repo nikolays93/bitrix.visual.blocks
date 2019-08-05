@@ -6,6 +6,7 @@ if ( ! defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 
 $arComponentParameters = array(
     // "GROUPS" => array(
+    //     // "COMPONENT_TEMPLATE"
     //     // "BASE",
     //     // "DATA_SOURCE",
     //     // "VISUAL",
@@ -17,17 +18,6 @@ $arComponentParameters = array(
     //     // "ADDITIONAL_SETTINGS",
     // ),
     "PARAMETERS" => array(
-        "BASE_VELEMENTS" => array(
-            "PARENT"   => "BASE",
-            "NAME"     => "Base",
-            "TYPE"     => "CUSTOM",
-            "MULTIPLE" => "Y",
-            // @todo переменный путь до компонентов (local/bitrix)
-            "JS_FILE"  => "/local/components/nikolays93/visual.blocks/assets/base.js",
-            "JS_EVENT" => "onInitVisualBlocks",
-            "JS_DATA"  => "", // additional js data for ex. LANGUAGE_ID."||".GetMessage("MYMS_PARAM_DATA_SET")
-            "DEFAULT"  => "",
-        ),
     ),
 );
 

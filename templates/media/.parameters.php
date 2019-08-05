@@ -13,13 +13,12 @@ $arTemplateParameters = array(
     ),
     "IMAGE_ELEMENTS" => array(
         "PARENT"   => "VISUAL",
-        "NAME"     => "Изображения элементов визуального блока",
+        // "NAME"     => "Изображения элементов визуального блока",
         "TYPE"     => "CUSTOM",
         "MULTIPLE" => "Y",
-        // @todo переменный путь до компонентов (local/bitrix)
-        "JS_FILE"  => "/local/components/nikolays93/visual.blocks/assets/image.js",
-        "JS_EVENT" => "onEditImage",
-        "JS_DATA"  => "", // additional js data for ex. LANGUAGE_ID."||".GetMessage("MYMS_PARAM_DATA_SET")
+        "JS_FILE"  => "/local/components/nikolays93/visual.blocks/assets/inputs.js",
+        "JS_EVENT" => "onEscapeField",
+        "JS_DATA"  => "",
         "DEFAULT"  => "",
     ),
     "ELEMENTS" => array(
@@ -28,8 +27,8 @@ $arTemplateParameters = array(
         "TYPE"     => "CUSTOM",
         "MULTIPLE" => "Y",
         // @todo переменный путь до компонентов (local/bitrix)
-        "JS_FILE"  => "/local/components/nikolays93/visual.blocks/assets/textarea.js",
-        "JS_EVENT" => "onEditTextarea",
+        "JS_FILE"  => "/local/components/nikolays93/visual.blocks/assets/inputs.js",
+        "JS_EVENT" => "onEditMedia",
         "JS_DATA"  => "", // additional js data for ex. LANGUAGE_ID."||".GetMessage("MYMS_PARAM_DATA_SET")
         "DEFAULT"  => "",
     ),
