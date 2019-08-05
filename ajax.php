@@ -7,8 +7,8 @@ $result = array(
     'errors' => array(),
 );
 
-if (!isset($_REQUEST['action'])) {
-    $result['errors'][] = 'Do not have action';
+if ( ! isset($_REQUEST['action'])) {
+    $result['errors'][] = 'Do not has action';
     die(json_encode($result));
 }
 
@@ -27,16 +27,14 @@ switch ($_REQUEST['action']) {
 
             $fid           = CFile::SaveFile($arFile, "visual.blocks" . $_REQUEST['pathname']);
             $result['src'] = CFile::GetPath($fid);
-        }
-        else {
+        } else {
             $result['errors'][] = 'Empty file name';
         }
-    break;
+        break;
 
     default:
         $result['errors'][] = 'Action not defined';
-    break;
+        break;
 }
-
 
 die(json_encode($result));
