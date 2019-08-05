@@ -23,36 +23,36 @@ function onEditTextarea(arParams) {
             },
             html: areaVal,
             events: {
-                change: BX.delegate(function() {
+                change: BX.delegate(function () {
                     input.value = obTextarea.value.replace(',', '&#44;');
                 })
             }
         }));
 
-        if( !isDisableClose ) {
+        if (!isDisableClose) {
             var obAreaClose = wrap.appendChild(BX.create('SPAN', {
                 style: {
-                    position: 'absolute',
-                    top: '1px',
-                    right: '1px',
+                    'position': 'absolute',
+                    'top': '1px',
+                    'right': '1px',
                     'border-radius': '6px',
                     'background-color': 'rgba(255, 0, 0, 0.1)',
-                    color: 'red',
-                    width: '30px',
-                    height: '30px',
+                    'color': 'red',
+                    'width': '30px',
+                    'height': '30px',
                     'line-height': '30px',
                     'text-align': 'center',
                     'font-size': '20px',
-                    cursor: 'pointer'
+                    'cursor': 'pointer'
                 },
                 attrs: {
                     className: 'close-textarea'
                 },
                 html: '&times;',
                 events: {
-                    click: BX.delegate(function() {
+                    click: BX.delegate(function () {
                         var isConfirm = confirm("Если вы удалите эту ячейку потеряете её контент и расположение, вы уверены?");
-                        if( isConfirm ) {
+                        if (isConfirm) {
                             input.parentNode.removeChild(input);
                             wrap.parentNode.removeChild(wrap);
                         }
@@ -63,9 +63,6 @@ function onEditTextarea(arParams) {
 
         return obTextarea;
     }
-
-    // @todo
-    function removeTextarea(textarea, input) {}
 
     function cloneInput(value) {
         value = value || '';
@@ -82,7 +79,7 @@ function onEditTextarea(arParams) {
             html: 'Добавить элемент'
         }));
 
-        obButton.onclick = BX.delegate(function() {
+        obButton.onclick = BX.delegate(function () {
             obButton.parentNode.removeChild(obButton);
             addTextarea(cloneInput());
             addMultipleButton(inputArea);
@@ -115,7 +112,7 @@ function onEditTextarea(arParams) {
     var arValues = arParams.oInput.value.split(',');
 
     var i = 0;
-    arValues.forEach(function(el) {
+    arValues.forEach(function (el) {
         var isDisableClose = false;
 
         if (i == 0) {

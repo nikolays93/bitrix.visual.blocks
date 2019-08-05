@@ -1,4 +1,8 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+<?php
+
+if ( ! defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+    die();
+}
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -12,13 +16,13 @@
 /** @var string $componentPath */
 /** @var customOrderComponent $component */
 
-if( is_array($arParams['ELEMENTS']) ) {
-    if( $columns = intval($arParams['COLUMNS']) ) {
-        $rowClass = 'columns-' . $columns;
+if (is_array($arParams['ELEMENTS'])) {
+    if ($columns = intval($arParams['COLUMNS'])) {
+        $rowClass    = 'columns-' . $columns;
         $columnClass = 'column';
 
-        if( function_exists('get_column_class') ) {
-            $rowClass = 'row';
+        if (function_exists('get_column_class')) {
+            $rowClass    = 'row';
             $columnClass = get_column_class($columns);
         }
 
@@ -26,7 +30,7 @@ if( is_array($arParams['ELEMENTS']) ) {
         foreach ($arParams['ELEMENTS'] as $element) {
             echo '<div class="' . $columnClass . '">' . htmlspecialcharsBack($element) . '</div>';
         }
-        echo '<!-- /'. $rowClass . ' -->';
+        echo '<!-- /' . $rowClass . ' -->';
     }
     else {
         foreach ($arParams['ELEMENTS'] as $element) {
